@@ -5,12 +5,22 @@ A MongoLibrary for C#
 
 ###### Sample code
 
+1. Connection String
 ```
   <connectionStrings>
     <add name="test" connectionString="mongodb://localhost:27017/Test"/>
   </connectionStrings>
 ```
+2. Define Class, Document
+```
+    public class MongoTestCollection : Entity
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
+```
 
+3. Get Result
 ```
 MongoRepo repo = new MongoRepo("test");
             
