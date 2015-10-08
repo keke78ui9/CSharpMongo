@@ -5,13 +5,13 @@ A MongoLibrary for C#
 
 ###### Sample code
 
-1. Connection String
+Connection String
 ```
   <connectionStrings>
     <add name="test" connectionString="mongodb://localhost:27017/Test"/>
   </connectionStrings>
 ```
-2. Define Class, Document
+Define Class, Document
 ```
     public class MongoTestCollection : Entity
     {
@@ -20,7 +20,7 @@ A MongoLibrary for C#
     }
 ```
 
-3. Get Result
+Get Result
 ```
 MongoRepo repo = new MongoRepo("test");
             
