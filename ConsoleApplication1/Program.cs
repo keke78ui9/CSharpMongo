@@ -45,6 +45,7 @@ namespace ConsoleApplication1
             // delete stuff
             repo.Delete<MongoTestCollection>(x => x.Age == 1);
 
+
         }
 
         /// <summary>
@@ -68,7 +69,7 @@ namespace ConsoleApplication1
         }
     }
 
-    public class MongoTestCollection : Entity
+    public class MongoTestCollection : TDocument
     {
         public string Name { get; set; }
         public int Age { get; set; }

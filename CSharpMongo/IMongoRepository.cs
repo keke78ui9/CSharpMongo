@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace CSharpMongo
 {
-    public interface IMongoRepository
+    public interface IMongoRepository: IQueryable
     {
-        long Count<Entity>() where Entity : class, new();
-        void Add<Entity>(Entity entity) where Entity : class, new();
-        void Update<Entity>(Expression<Func<Entity, bool>> filter, UpdateDefinition<Entity> update) where Entity : class, new();
-        void Delete<Entity>(Expression<Func<Entity, bool>> filter) where Entity : class, new();
-        List<Entity> Find<Entity>() where Entity : class, new();
+        long Count<Entity>() where Entity : TDocument;
+        void Add<Entity>(Entity entity) where Entity : TDocument;
+        void Update<Entity>(Entity entity) where Entity : TDocument;
+        void Update<Entity>(Expression<Func<Entity, bool>> filter, UpdateDefinition<Entity> update) where Entity : TDocument;
+        void Delete<Entity>(Expression<Func<Entity, bool>> filter) where Entity : TDocument;
+        List<Entity> Find<Entity>() where Entity : TDocument;
     }
 }

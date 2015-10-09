@@ -49,7 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity.cs" />
+    <Compile Include="TDocument.cs" />
+    <Compile Include="IEntity.cs" />
     <Compile Include="MongoRepo.cs" />
     <Compile Include="IMongoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

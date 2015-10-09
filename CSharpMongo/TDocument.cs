@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CSharpMongo
 {
-    public class Entity
+    public class TDocument
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
