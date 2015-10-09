@@ -4,42 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq.Expressions;
-using System.Collections;
-using System.Linq;
-using CSharpMongo;
 
 namespace CSharpMongo
 {
-    public class MongoRepo : IMongoRepository
+    public class MongoRepo : IMongoRepository, IMongo
     {
-        private MongoClient _client;
-        private IMongoDatabase _provider;
-        private MongoUrl _mongoUrl;
-
-        public Expression Expression
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public Type ElementType
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public IQueryProvider Provider
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
         public MongoRepo(string connectionName)
         {
             var config = ConfigurationManager.ConnectionStrings[connectionName];
@@ -54,64 +23,63 @@ namespace CSharpMongo
 
         private void LoadDatabase(string connectionString)
         {
-            _mongoUrl = new MongoUrl(connectionString);
-            _client = new MongoClient(_mongoUrl);
-            _provider = _client.GetDatabase(_mongoUrl.DatabaseName);
+            Url = new MongoUrl(connectionString);
+            Client = new MongoClient(Url);
+            Database = Client.GetDatabase(Url.DatabaseName);
         }
 
-        private string CollectionName<Entity>()
+        public MongoClient Client { get; private set; }
+        public IMongoDatabase Database { get; private set; }
+        public MongoUrl Url { get; private set; }
+
+        private string CollectionName<T>()
         {
-            Type type = typeof(Entity);
+            Type type = typeof(T);
             return type.Name;
         }
 
-        public long Count<Entity>() where Entity : TDocument
+        public long Count<T>() where T : TDocument
         {
-            IMongoCollection<Entity> collections = _provider.GetCollection<Entity>(CollectionName<Entity>());
+            IMongoCollection<T> collections = Database.GetCollection<T>(CollectionName<T>());
             var filter = new BsonDocument();
             return collections.CountAsync(filter).Result;
         }
 
-        public void Add<Entity>(Entity entity) where Entity : TDocument
+        public void Add<T>(T t) where T : TDocument
         {
-            _provider.GetCollection<Entity>(CollectionName<Entity>()).InsertOneAsync(entity);
+            Database.GetCollection<T>(CollectionName<T>()).InsertOneAsync(t);
         }
 
-        public void Update<Entity>(Expression<Func<Entity, bool>> filter, UpdateDefinition<Entity> update) where Entity : TDocument
+        public void Update<T>(Expression<Func<T, bool>> filter, UpdateDefinition<T> update) where T : TDocument
         {
-            IMongoCollection<Entity> collections = _provider.GetCollection<Entity>(CollectionName<Entity>());
-            collections.UpdateOneAsync<Entity>(filter, update);
+            IMongoCollection<T> collections = Database.GetCollection<T>(CollectionName<T>());
+            collections.UpdateOneAsync<T>(filter, update);
         }
 
-        public void Delete<Entity>(Expression<Func<Entity, bool>> filter) where Entity : TDocument
+        public void Delete<T>(Expression<Func<T, bool>> filter) where T : TDocument
         {
-            IMongoCollection<Entity> collections = _provider.GetCollection<Entity>(CollectionName<Entity>());
-             collections.DeleteManyAsync<Entity>(filter);
+            IMongoCollection<T> collections = Database.GetCollection<T>(CollectionName<T>());
+             collections.DeleteManyAsync<T>(filter);
         }
 
-        public List<Entity> Find<Entity>() where Entity : TDocument
+        public List<T> Find<T>() where T : TDocument
         {
-            return FindAll<Entity>();
+            return FindAll<T>();
         }
 
-        private List<Entity> FindAll<Entity>()
+        private List<T> FindAll<T>()
         {
-            IMongoCollection<Entity> collections = _provider.GetCollection<Entity>(CollectionName<Entity>());
+            IMongoCollection<T> collections = Database.GetCollection<T>(CollectionName<T>());
             return collections.Find(new BsonDocument()).ToListAsync().Result;
         }
 
 
-        public void Update<Entity>(Entity entity) where Entity : TDocument
+        public void Update<T>(T t) where T : TDocument
         {
-            var filterBuilder = Builders<Entity>.Filter;
-            var filter = filterBuilder.Eq("Id", entity.Id);
-            IMongoCollection<Entity> collections = _provider.GetCollection<Entity>(CollectionName<Entity>());
-            collections.ReplaceOneAsync(filter, entity);
-        }
-
-        public IEnumerator GetEnumerator()
-        {
-            throw new NotImplementedException();
+            var filterBuilder = Builders<T>.Filter;
+            var filter = filterBuilder.Eq("Id", t.Id);
+            IMongoCollection<T> collections = Database.GetCollection<T>(CollectionName<T>());
+            collections.ReplaceOneAsync(filter, t);
         }
     }
 }

@@ -36,15 +36,18 @@ namespace ConsoleApplication1
                 Age = 1
             });
 
-            // get stuff
+            // get
             var result = repo.Find<MongoTestCollection>();
 
-            // count stuff
+            // update
+            result.FirstOrDefault().Age = 100;
+            repo.Update<MongoTestCollection>(result.FirstOrDefault());
+
+            // count
             var count = repo.Count<MongoTestCollection>();
 
-            // delete stuff
+            // delete
             repo.Delete<MongoTestCollection>(x => x.Age == 1);
-
 
         }
 
