@@ -50,7 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TDocument.cs" />
-    <Compile Include="IEntity.cs" />
     <Compile Include="MongoRepo.cs" />
     <Compile Include="IMongoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
