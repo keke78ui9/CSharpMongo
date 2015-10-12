@@ -27,27 +27,27 @@ namespace ConsoleApplication1
 
         private static void TestCsharpMongo()
         {
-            Mongo repo = new Mongo("test");
+            Mongo db = new Mongo("test");
             
             // add stuff
-            repo.Add<MongoTestCollection>(new MongoTestCollection 
+            db.Add<MongoTestCollection>(new MongoTestCollection 
             {
-                Name = Guid.NewGuid().ToString(),
-                Age = 1
+            Name = Guid.NewGuid().ToString(),
+            Age = 1
             });
 
             // get
-            var result = repo.Find<MongoTestCollection>();
+            var result = db.Find<MongoTestCollection>();
 
             // update
             result.FirstOrDefault().Age = 100;
-            repo.Update<MongoTestCollection>(result.FirstOrDefault());
+            db.Update<MongoTestCollection>(result.FirstOrDefault());
 
             // count
-            var count = repo.Count<MongoTestCollection>();
+            var count = db.Count<MongoTestCollection>();
 
             // delete
-            repo.Delete<MongoTestCollection>(x => x.Age == 1);
+            db.Delete<MongoTestCollection>(x => x.Age == 1);
 
         }
 
