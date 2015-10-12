@@ -20,7 +20,7 @@ Define Class, Document
     }
 ```
 
-Get Result
+Example code for CRUD
 ```
 Mongo db = new Mongo("test");
             
