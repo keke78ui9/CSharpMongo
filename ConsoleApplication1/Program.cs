@@ -27,7 +27,7 @@ namespace ConsoleApplication1
 
         private static void TestCsharpMongo()
         {
-            MongoRepo repo = new MongoRepo("test");
+            Mongo repo = new Mongo("test");
             
             // add stuff
             repo.Add<MongoTestCollection>(new MongoTestCollection 

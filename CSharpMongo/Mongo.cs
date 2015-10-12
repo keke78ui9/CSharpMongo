@@ -7,9 +7,9 @@ using System.Linq.Expressions;
 
 namespace CSharpMongo
 {
-    public class MongoRepo : IMongoRepository, IMongo
+    public class Mongo : IMongoRepository, IMongo
     {
-        public MongoRepo(string connectionName)
+        public Mongo(string connectionName)
         {
             var config = ConfigurationManager.ConnectionStrings[connectionName];
             if (config == null)
