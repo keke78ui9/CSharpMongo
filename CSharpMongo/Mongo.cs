@@ -4,7 +4,7 @@ using System.Configuration;
 
 namespace CSharpMongo
 {
-    public class Mongo : IMongo
+    public class Mongo : IMongo, IDisposable
     {
         public Mongo(string connectionName)
         {
@@ -40,5 +40,9 @@ namespace CSharpMongo
             return Database.GetCollection<T>(GetCollectionName<T>());
         }
 
+        public void Dispose()
+        {
+            Client.Cluster.Dispose();
+        }
     }
 }
