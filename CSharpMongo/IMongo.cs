@@ -1,9 +1,4 @@
-﻿using MongoDB.Bson;
-using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq.Expressions;
+﻿using MongoDB.Driver;
 
 namespace CSharpMongo
 {

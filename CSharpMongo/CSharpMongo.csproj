@@ -52,6 +52,9 @@
     <Compile Include="IMongo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MongoExtension.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="TDocument.cs" />
     <Compile Include="Mongo.cs" />
     <Compile Include="IMongoRepository.cs" />
