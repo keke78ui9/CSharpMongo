@@ -20,23 +20,27 @@ Define Class, Document
     }
 ```
 
-Get Result
+Example code for CRUD
 ```
-MongoRepo repo = new MongoRepo("test");
+Mongo db = new Mongo("test");
             
 // add stuff
-repo.Add<MongoTestCollection>(new MongoTestCollection 
+db.Add<MongoTestCollection>(new MongoTestCollection 
 {
-    Name = Guid.NewGuid().ToString(),
-    Age = 1
+Name = Guid.NewGuid().ToString(),
+Age = 1
 });
 
-// get stuff
-var result = repo.Find<MongoTestCollection>();
+// get
+var result = db.Find<MongoTestCollection>();
 
-// count stuff
-var count = repo.Count<MongoTestCollection>();
+// update
+result.FirstOrDefault().Age = 100;
+db.Update<MongoTestCollection>(result.FirstOrDefault());
 
-// delete stuff
-repo.Delete<MongoTestCollection>(x => x.Age == 1);
+// count
+var count = db.Count<MongoTestCollection>();
+
+// delete
+db.Delete<MongoTestCollection>(x => x.Age == 1);
 ```
