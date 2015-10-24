@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{05A1A696-78E9-47CC-ABDD-BC9251735036}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{779D63DB-DF5E-49B8-A17F-F16AF4B6B691}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpMongo", "CSharpMongo\CSharpMongo.csproj", "{A0B0A869-C737-4356-AC39-2889FFA07B75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mongo.Net", "src\Mongo.Net\Mongo.Net.csproj", "{A0B0A869-C737-4356-AC39-2889FFA07B75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6B11B8C3-B320-42E4-9882-C3BCB2F94741}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mongo.NET.Test", "test\Mongo.NET.Test\Mongo.NET.Test.csproj", "{678A740B-B554-4FB7-9807-FACD1FB7C180}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{0E0147E6-5F22-494C-BCC5-D5E103C7CC38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleExample", "sample\ConsoleExample\ConsoleExample.csproj", "{05A1A696-78E9-47CC-ABDD-BC9251735036}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +21,25 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{05A1A696-78E9-47CC-ABDD-BC9251735036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{05A1A696-78E9-47CC-ABDD-BC9251735036}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{05A1A696-78E9-47CC-ABDD-BC9251735036}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{05A1A696-78E9-47CC-ABDD-BC9251735036}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A0B0A869-C737-4356-AC39-2889FFA07B75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A0B0A869-C737-4356-AC39-2889FFA07B75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0B0A869-C737-4356-AC39-2889FFA07B75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0B0A869-C737-4356-AC39-2889FFA07B75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{678A740B-B554-4FB7-9807-FACD1FB7C180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{678A740B-B554-4FB7-9807-FACD1FB7C180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{678A740B-B554-4FB7-9807-FACD1FB7C180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{678A740B-B554-4FB7-9807-FACD1FB7C180}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05A1A696-78E9-47CC-ABDD-BC9251735036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05A1A696-78E9-47CC-ABDD-BC9251735036}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05A1A696-78E9-47CC-ABDD-BC9251735036}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05A1A696-78E9-47CC-ABDD-BC9251735036}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A0B0A869-C737-4356-AC39-2889FFA07B75} = {779D63DB-DF5E-49B8-A17F-F16AF4B6B691}
+		{678A740B-B554-4FB7-9807-FACD1FB7C180} = {6B11B8C3-B320-42E4-9882-C3BCB2F94741}
+		{05A1A696-78E9-47CC-ABDD-BC9251735036} = {0E0147E6-5F22-494C-BCC5-D5E103C7CC38}
 	EndGlobalSection
 EndGlobal

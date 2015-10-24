@@ -4,7 +4,7 @@ using System.Configuration;
 
 namespace CSharpMongo
 {
-    public class Mongo : IMongo, IDisposable
+    public class Mongo : IMongo
     {
         public Mongo(string connectionName)
         {
@@ -29,20 +29,15 @@ namespace CSharpMongo
         public IMongoDatabase Database { get; private set; }
         public MongoUrl Url { get; private set; }
 
-        private string GetCollectionName<T>()
+        private static string GetCollectionName<T>()
         {
-            Type type = typeof(T);
+            var type = typeof(T);
             return type.Name;
         }
 
         public IMongoCollection<T> CollectionName<T>() where T : TDocument
         {
             return Database.GetCollection<T>(GetCollectionName<T>());
-        }
-
-        public void Dispose()
-        {
-            Client.Cluster.Dispose();
         }
     }
 }
