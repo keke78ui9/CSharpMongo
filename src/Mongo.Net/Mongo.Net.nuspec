@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Mongo.Net</id>
-    <version>1.0.1-beta</version>
+    <version>1.0.2-beta</version>
     <authors>keke78ui9</authors>
     <owners>keke78ui9</owners>
     <licenseUrl>https://github.com/keke78ui9/Mongo.Net/blob/master/LICENSE</licenseUrl>

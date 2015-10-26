@@ -4,9 +4,9 @@ using System.Configuration;
 
 namespace Mongo.Net
 {
-    public class Mongo : IMongo
+    public class MongoNet : IMongo
     {
-        public Mongo(string connectionName)
+        public MongoNet(string connectionName)
         {
             var config = ConfigurationManager.ConnectionStrings[connectionName];
             if (config == null)

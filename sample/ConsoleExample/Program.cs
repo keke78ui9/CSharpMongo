@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using Mongo.Net;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Linq;
@@ -23,24 +24,25 @@ namespace ConsoleApplication1
 
         private static void TestCsharpMongo()
         {
-            //var testDb = new Mongo("test");
 
-            //    // add
-            //testDb.CollectionName<MongoTestCollection>().Insert(new MongoTestCollection
-            //    {
-            //        Name = Guid.NewGuid().ToString(),
-            //        Age = 1
-            //    });
+            var testDb = new MongoNet("test");
 
-            //// get all
-            //var result = testDb.CollectionName<MongoTestCollection>().FindAll();
-            //result.FirstOrDefault().Age = 100;
+            // add
+            testDb.CollectionName<MongoTestCollection>().Insert(new MongoTestCollection
+            {
+                Name = Guid.NewGuid().ToString(),
+                Age = 1
+            });
 
-            //// count
-            //testDb.CollectionName<MongoTestCollection>().Count();
+            // get all
+            var result = testDb.CollectionName<MongoTestCollection>().FindAll();
+            result.FirstOrDefault().Age = 100;
 
-            //// delete
-            //testDb.CollectionName<MongoTestCollection>().Delete(x => x.Age == 1);
+            // count
+            testDb.CollectionName<MongoTestCollection>().Count();
+
+            // delete
+            testDb.CollectionName<MongoTestCollection>().Delete(x => x.Age == 1);
 
         }
 
@@ -49,25 +51,25 @@ namespace ConsoleApplication1
         /// </summary>
         private static void AccessMongo()
         {
-            //var client = new MongoClient("mongodb://localhost:27017");
+            var client = new MongoClient("mongodb://localhost:27017");
 
-            //var database = client.GetDatabase("Test");
+            var database = client.GetDatabase("Test");
 
-            //var collection = database.GetCollection<BsonDocument>("SampleData");
+            var collection = database.GetCollection<BsonDocument>("SampleData");
 
-            //var documents = collection.Find(new BsonDocument()).ToListAsync().Result;
+            var documents = collection.Find(new BsonDocument()).ToListAsync().Result;
 
-            //var document = new BsonDocument
-            //{
-            //    { "name", Guid.NewGuid().ToString() },
-            //    { "age", documents.Count() + 1 }
-            //};
+            var document = new BsonDocument
+            {
+                { "name", Guid.NewGuid().ToString() },
+                { "age", documents.Count() + 1 }
+            };
         }
     }
 
-    //public class MongoTestCollection : TDocument
-    //{
-    //    public string Name { get; set; }
-    //    public int Age { get; set; }
-    //}
+    public class MongoTestCollection : TDocument
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
 }

@@ -52,6 +52,12 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Mongo.Net\Mongo.Net.csproj">
+      <Project>{a0b0a869-c737-4356-ac39-2889ffa07b75}</Project>
+      <Name>Mongo.Net</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

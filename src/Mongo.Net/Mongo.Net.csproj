@@ -59,7 +59,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="TDocument.cs" />
-    <Compile Include="Mongo.cs" />
+    <Compile Include="MongoNet.cs" />
     <Compile Include="IMongoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
