@@ -2,7 +2,7 @@
 using System;
 using System.Configuration;
 
-namespace CSharpMongo
+namespace Mongo.Net
 {
     public class Mongo : IMongo
     {

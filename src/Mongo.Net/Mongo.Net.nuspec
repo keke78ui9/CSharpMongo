@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Mongo.Net</id>
+    <version>1.0.0-beta</version>
+    <authors>keke78ui9</authors>
+    <owners>keke78ui9</owners>
+    <licenseUrl>https://github.com/keke78ui9/Mongo.Net/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/keke78ui9/Mongo.Net</projectUrl>
+    <iconUrl>https://github.com/keke78ui9/Mongo.Net</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A MongoLibrary for C#</description>
+    <releaseNotes>Easy to get start to use CRUD features for Mongodb</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>MongoDB</tags>
+    <dependencies>
+      <dependency id="MongoDB.Driver" version="2.0.1" />
+     <dependency id="MongoDB.Bson" version="2.0.1" />
+     <dependency id="MongoDB.Driver.Core" version="2.0.1" />
+    </dependencies>
+  </metadata>
+</package>

@@ -1,6 +1,6 @@
 ﻿using MongoDB.Driver;
 
-namespace CSharpMongo
+namespace Mongo.Net
 {
     public interface IMongo
     {

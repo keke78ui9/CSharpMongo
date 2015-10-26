@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Mongo.Net")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A MongoLibrary for C#")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("dake")]
 [assembly: AssemblyProduct("Mongo.Net")]
 [assembly: AssemblyCopyright("Copyright © Mongo.Net 2015")]
 [assembly: AssemblyTrademark("")]

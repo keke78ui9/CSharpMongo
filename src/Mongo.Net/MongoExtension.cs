@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace CSharpMongo
+namespace Mongo.Net
 {
     public static class MongoExtension
     {
