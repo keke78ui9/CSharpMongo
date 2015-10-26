@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Mongo.Net.1.0.0-beta.nupkg" />
+    <None Include="Mongo.Net.1.0.1-beta.nupkg" />
     <None Include="Mongo.Net.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>

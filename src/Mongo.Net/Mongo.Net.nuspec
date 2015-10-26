@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Mongo.Net</id>
-    <version>1.0.0-beta</version>
+    <version>1.0.1-beta</version>
     <authors>keke78ui9</authors>
     <owners>keke78ui9</owners>
     <licenseUrl>https://github.com/keke78ui9/Mongo.Net/blob/master/LICENSE</licenseUrl>
@@ -10,7 +10,7 @@
     <iconUrl>https://github.com/keke78ui9/Mongo.Net</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A MongoLibrary for C#</description>
-    <releaseNotes>Easy to get start to use CRUD features for Mongodb</releaseNotes>
+    <releaseNotes>change name correct to match to the project name</releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>MongoDB</tags>
     <dependencies>
