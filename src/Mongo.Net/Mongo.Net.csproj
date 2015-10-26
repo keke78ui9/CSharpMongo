@@ -64,10 +64,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="build-nuget.cmd" />
     <None Include="Mongo.Net.1.0.0-beta.nupkg" />
     <None Include="Mongo.Net.1.0.1-beta.nupkg" />
     <None Include="Mongo.Net.nuspec" />
     <None Include="packages.config" />
+    <None Include="publish-nuget.cmd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="nuget.exe" />
