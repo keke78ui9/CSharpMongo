@@ -48,6 +48,7 @@ namespace ConsoleApplication1
 
         /// <summary>
         /// mongo server version: db.version() 3.0.5
+        /// TODO: if there's no mongodb, console window stop
         /// </summary>
         private static void AccessMongo()
         {
