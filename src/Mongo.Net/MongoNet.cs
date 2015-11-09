@@ -39,5 +39,10 @@ namespace Mongo.Net
         {
             return Database.GetCollection<T>(GetCollectionName<T>());
         }
+
+        public IMongoCollection<T> CollectionName<T>(string name) where T : TDocument
+        {
+            return Database.GetCollection<T>(name);
+        }
     }
 }
