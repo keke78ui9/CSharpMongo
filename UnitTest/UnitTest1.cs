@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Mongo.Net;
+using MongoNet;
 
 namespace UnitTest
 {
@@ -10,7 +10,7 @@ namespace UnitTest
         [TestMethod]
         public void TestMethod1()
         {
-            MongoNet net = new MongoNet("");
+            MongoDabase net = new MongoDabase("");
             var x = net.CollectionName<TestClass>("TestClass");
             
         }

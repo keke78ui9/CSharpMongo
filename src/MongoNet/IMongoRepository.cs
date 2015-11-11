@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace Mongo.Net
+namespace MongoNet
 {
     public interface IMongoRepository
     {

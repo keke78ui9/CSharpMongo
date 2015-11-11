@@ -2,11 +2,11 @@
 using System;
 using System.Configuration;
 
-namespace Mongo.Net
+namespace MongoNet
 {
-    public class MongoNet : IMongo
+    public class MongoDabase : IMongo
     {
-        public MongoNet(string connectionName)
+        public MongoDabase(string connectionName)
         {
             var config = ConfigurationManager.ConnectionStrings[connectionName];
             if (config == null)

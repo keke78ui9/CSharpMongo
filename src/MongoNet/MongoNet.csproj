@@ -7,8 +7,8 @@
     <ProjectGuid>{A0B0A869-C737-4356-AC39-2889FFA07B75}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mongo.Net</RootNamespace>
-    <AssemblyName>Mongo.Net</AssemblyName>
+    <RootNamespace>MongoNet</RootNamespace>
+    <AssemblyName>MongoNet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
@@ -30,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\MongoNet.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MongoDB.Bson, Version=2.1.0.145, Culture=neutral, processorArchitecture=MSIL">
@@ -60,7 +61,6 @@
     <Compile Include="MongoExtension.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MongoFieldExtensions.cs" />
     <Compile Include="TDocument.cs" />
     <Compile Include="MongoNet.cs" />
     <Compile Include="IMongoRepository.cs" />

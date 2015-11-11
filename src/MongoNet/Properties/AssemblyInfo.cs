@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Mongo.Net")]
+[assembly: AssemblyTitle("MongoNet")]
 [assembly: AssemblyDescription("A MongoLibrary for C#")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("dake")]
-[assembly: AssemblyProduct("Mongo.Net")]
+[assembly: AssemblyProduct("MongoNet")]
 [assembly: AssemblyCopyright("Copyright © Mongo.Net 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -1,6 +1,6 @@
-﻿using Mongo.Net;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Driver;
+using MongoNet;
 using System;
 using System.Linq;
 
@@ -25,7 +25,7 @@ namespace ConsoleApplication1
         private static void TestCsharpMongo()
         {
 
-            var testDb = new MongoNet("test");
+            var testDb = new MongoDabase("test");
 
             // add
             testDb.CollectionName<MongoTestCollection>().Insert(new MongoTestCollection
