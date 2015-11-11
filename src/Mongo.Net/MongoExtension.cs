@@ -2,6 +2,7 @@
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace Mongo.Net
@@ -43,6 +44,37 @@ namespace Mongo.Net
             var filter = filterBuilder.Eq("Id", t.Id);
             collection.ReplaceOneAsync(filter, t);
             return collection;
+        }
+
+        public static void Add<T>(this IMongoCollection<T> helper, T row) where T : TDocument
+        {
+            helper.Insert(row);
+        }
+
+        public static T FirstOrDefault<T>(this IMongoCollection<T> helper) where T : TDocument
+        {
+            return helper.FindAll().FirstOrDefault();
+        }
+
+        public static T FirstOrDefault<T>(this IMongoCollection<T> helper, Expression<Func<T, bool>> expression) where T : TDocument
+        {
+            return helper.Find(expression).FirstOrDefaultAsync().Result;
+        }
+
+        public static List<T> ToList<T>(this IMongoCollection<T> helper) where T : TDocument
+        {
+            return helper.FindAll();
+        }
+
+        public static string ToString(this ObjectId helper)
+        {
+            return helper.ToString();
+        }
+
+        public static ObjectId ToObjectId(this string helper)
+        {
+            ObjectId id = new ObjectId(helper);
+            return id;
         }
     }
 }

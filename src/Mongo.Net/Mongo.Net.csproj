@@ -60,6 +60,7 @@
     <Compile Include="MongoExtension.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MongoFieldExtensions.cs" />
     <Compile Include="TDocument.cs" />
     <Compile Include="MongoNet.cs" />
     <Compile Include="IMongoRepository.cs" />
