@@ -1,7 +1,13 @@
-# Mongo.Net
-A MongoLibrary for C#
-+ use MongoDriver 2.0.1
-+ test MongoDB Server 3.0.5
+# MongoNet
+### Goal
+Provide helper functions for MongoDriver >= 2.0.0 MongoLibrary
++ use MongoDriver >= 2.0.0
++ have only test MongoDB Server 3.0.5
+
+### Nuget
+```
+PM> Install-Package Mongo.Net -Pre
+```
 
 ###### Sample code
 
