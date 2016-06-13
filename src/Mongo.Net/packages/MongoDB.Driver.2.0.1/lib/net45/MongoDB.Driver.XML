@@ -5839,7 +5839,7 @@
             </summary>
       <param name="value">The string representation of a server address.</param>
       <param name="address">The server address (set to null if TryParse fails).</param>
-      <returns>True if the string is parsed succesfully.</returns>
+      <returns>True if the string is parsed successfully.</returns>
     </member>
     <member name="T:MongoDB.Driver.MongoUrl">
       <summary>

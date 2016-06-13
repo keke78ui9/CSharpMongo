@@ -3310,7 +3310,7 @@
             </summary>
       <param name="value">An object.</param>
       <param name="bsonValue">The BsonValue.</param>
-      <returns>True if the mapping was successfull.</returns>
+      <returns>True if the mapping was successful.</returns>
     </member>
     <member name="T:MongoDB.Bson.BsonTypeMapperOptions">
       <summary>
@@ -4340,7 +4340,7 @@
             </summary>
       <param name="value">An object.</param>
       <param name="bsonValue">The BsonValue.</param>
-      <returns>True if the mapping was successfull.</returns>
+      <returns>True if the mapping was successful.</returns>
     </member>
     <member name="T:MongoDB.Bson.LazyBsonArray">
       <summary>
